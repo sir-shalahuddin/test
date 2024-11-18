@@ -1,0 +1,83 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.game-container {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  max-width: 600px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  height: 100%;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  border: 2px solid #ccc;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+
+.image-grid .image-part {
+  background-repeat: no-repeat;
+  background-size: 300% 200%; /* Memastikan gambar dibagi dengan benar */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-part:nth-child(1) { background-position: 0% 0%; }   /* Top-left */
+.image-part:nth-child(2) { background-position: 50% 0%; } /* Top-center */
+.image-part:nth-child(3) { background-position: 100% 0%; } /* Top-right */
+.image-part:nth-child(4) { background-position: 0% 100%; } /* Bottom-left */
+.image-part:nth-child(5) { background-position: 50% 100%; } /* Bottom-center */
+.image-part:nth-child(6) { background-position: 100% 100%; } /* Bottom-right */
+
+#guess-input {
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#submit-guess {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+#submit-guess:hover {
+  background-color: #0056b3;
+}
+
+#message {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+#credit {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+}
